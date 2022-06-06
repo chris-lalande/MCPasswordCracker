@@ -11,7 +11,7 @@ import hashlib
 PASSWORD_TO_CRACK = "2b58af6dddbd072ed27ffc86725d7d3a"
 
 # Read in the file of example passwords
-password_file = open('10k-most-common.txt', 'r')
+password_file = open('/home/student/Desktop/1000-most-common-passwords.txt', 'r')
 common_passwords = password_file.readlines()
 
 # Track whether we have cracked the password
