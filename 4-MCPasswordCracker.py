@@ -10,18 +10,11 @@ import hashlib
 # This password is a hashed hexadecimal equivalent of a string
 PASSWORD_TO_CRACK = "2b58af6dddbd072ed27ffc86725d7d3a"
 
-# Read in the file of example passwords
-password_file = open('10k-most-common.txt', 'r')
-common_passwords = password_file.readlines()
-
-# Track whether we have cracked the password
-password_found = False
+common_passwords = ['password', '123456', 'dragon']
 
 # Loop through each of the passwords in the file
 # Note:  there is more than one kind of loop we could use here
 for plain_text_password in common_passwords:
-    # Remove the newline character from the line
-    plain_text_password = plain_text_password.strip()
 
     # Hash the password from the file
     hashed_password = hashlib.md5(plain_text_password.encode()).hexdigest()
@@ -33,16 +26,7 @@ for plain_text_password in common_passwords:
         # print a success message including the cracked password
         # note that we want to print the plain text not the hash!
         print("The password is " + plain_text_password)
-        password_found = True
-
-        #    and exit the loop
-        break
 
     # otherwise, keep trying new passwords
-    # else:
-    #     print("The password is NOT " + plain_text_password)
-
-if password_found:
-    print("We cracked the password!")
-else:
-    print("We did not crack the password.")
+    else:
+        print("The password is NOT " + plain_text_password)
