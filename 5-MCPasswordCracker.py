@@ -34,3 +34,8 @@ for plain_text_password in common_passwords:
     # otherwise, keep trying new passwords
     else:
         print("The password is NOT " + plain_text_password)
+
+if password_found:
+    print("We cracked the password!")
+else:
+    print("We did not crack the password.")
