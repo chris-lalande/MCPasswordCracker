@@ -5,13 +5,13 @@
 # Load up an MD5 library
 import hashlib
 
-# Set the password we are trying to crack into a constant
+# Set the password we are trying to crack into a constant variable
 # By convention, constants are named with all caps
 # This password is a hashed hexadecimal equivalent of a string
 PASSWORD_TO_CRACK = "2b58af6dddbd072ed27ffc86725d7d3a"
 
 # Read in the file of example passwords
-password_file = open('10k-most-common.txt', 'r')
+password_file = open('/home/student/Desktop/1000-most-common-passwords.txt', 'r')
 common_passwords = password_file.readlines()
 
 # Track whether we have cracked the password
