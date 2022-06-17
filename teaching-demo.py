@@ -3,12 +3,17 @@
 # Library for HTTP requests
 import requests
 
-# Constant to hold our URL
-URL = "http://172.31.29.252"
+# Constant to hold our URLs
+ASSIGNED_URL = "http://172.31.29.252"
 MUSIC_URL = "http://davidpots.com/jakeworry/017%20JSON%20Grouping,%20part%203/data.json"
 
-response = requests.get(url=MUSIC_URL)
+# define the function with a url (string) argument
+def parse_json(url_arg):
+    response = requests.get(url=url_arg)
 
-music_and_books = response.json()
+    music_and_books = response.json()
 
-print(music_and_books)
+    print(music_and_books)
+
+# Call the function
+parse_json(MUSIC_URL)
